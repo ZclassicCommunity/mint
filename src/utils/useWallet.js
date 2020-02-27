@@ -70,11 +70,11 @@ export const useWallet = () => {
     new Big(balances.totalBalance).minus(previousBalances.totalBalance).gt(0)
   ) {
     notification.success({
-      message: "BCH",
+      message: "ZCL",
       description: (
         <Paragraph>
           You received {Number(balances.totalBalance - previousBalances.totalBalance).toFixed(8)}{" "}
-          BCH!
+          ZCL!
         </Paragraph>
       ),
       duration: 2

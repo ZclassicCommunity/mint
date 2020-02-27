@@ -201,7 +201,7 @@ const App = () => {
               }
             >
               <div className="logo">
-                <img src={logo} alt="Bitcoin.com Mint" />
+                <img src={logo} alt="ZSLP.org Mint" />
               </div>
               <div
                 style={{
@@ -239,38 +239,6 @@ const App = () => {
                   <Menu.Item key="4">
                     <span>Audit</span>
                   </Menu.Item>
-                  <Menu.SubMenu key="5" title={<span>Links</span>}>
-                    <Menu.Item key="6">
-                      <a href="https://free.bitcoin.com/" target="_blank" rel="noopener noreferrer">
-                        Faucet (Free BCH)
-                      </a>
-                    </Menu.Item>
-                    <Menu.Item key="7">
-                      <a
-                        href="https://exchange.bitcoin.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Exchange
-                      </a>
-                    </Menu.Item>
-                    <Menu.Item key="8">
-                      {" "}
-                      <a
-                        href="https://cashgames.bitcoin.com/home"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Games
-                      </a>
-                    </Menu.Item>
-                    <Menu.Item key="9">
-                      {" "}
-                      <a href="https://local.bitcoin.com" target="_blank" rel="noopener noreferrer">
-                        Trade Locally
-                      </a>
-                    </Menu.Item>
-                  </Menu.SubMenu>
                 </Menu.ItemGroup>
 
                 {wallet ? (
@@ -303,12 +271,12 @@ const App = () => {
                           style={{
                             borderRadius: "19.5px",
                             height: "40px",
-                            width: "103px"
+                            width: "113px"
                           }}
                           value="slpAddress"
                           onClick={e => handleChangeAddress(e)}
                         >
-                          SLP Tokens
+                          ZSLP Tokens
                         </Radio.Button>
                         <Radio.Button
                           style={{
@@ -319,7 +287,7 @@ const App = () => {
                           value="cashAddress"
                           onClick={e => handleChangeAddress(e)}
                         >
-                          Bitcoin Cash
+                          ZClassic
                         </Radio.Button>
                       </Radio.Group>
                     </div>

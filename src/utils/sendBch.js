@@ -76,7 +76,7 @@ export const sendBch = withSLP(
       for (let i = 0; i < addresses.length; i++) {
         const address = addresses[i];
         transactionBuilder.addOutput(
-          SLP.Address.toCashAddress(address),
+          SLP.Address.toLegacyAddress(address),
           SLP.BitcoinCash.toSatoshi(Number(values[i]).toFixed(8))
         );
       }
@@ -106,9 +106,9 @@ export const sendBch = withSLP(
       const txidStr = await SLP.RawTransactions.sendRawTransaction([hex]);
       let link;
       if (NETWORK === `mainnet`) {
-        link = `https://explorer.bitcoin.com/bch/tx/${txidStr}`;
+        link = `https://explorer.zcl.zeltrez.io/tx/${txidStr}`;
       } else {
-        link = `https://explorer.bitcoin.com/tbch/tx/${txidStr}`;
+        link = `https://explorer.zcl.zeltrez.io/tx/${txidStr}`;
       }
       console.log(link);
 

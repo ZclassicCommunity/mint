@@ -65,12 +65,12 @@ export default () => {
                 validateStatus={!data.dirty && !data.restAPI ? "error" : ""}
                 help={
                   !data.dirty && !data.restAPI
-                    ? "Should be something like https://rest.bitcoin.com"
+                    ? "Should be something like https://rest.zslp.org"
                     : ""
                 }
               >
                 <Input
-                  placeholder={data.restAPI || "https://rest.bitcoin.com"}
+                  placeholder={data.restAPI || "https://rest.zslp.org"}
                   name="restAPI"
                   onChange={e => handleChange(e)}
                   required

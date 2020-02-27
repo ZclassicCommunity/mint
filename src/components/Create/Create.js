@@ -234,7 +234,7 @@ const Create = ({ history }) => {
     setLoading(true);
     const { tokenName, tokenSymbol, documentUri, amount, decimals, fixedSupply } = data;
     try {
-      const docUri = documentUri || "developer.bitcoin.com";
+      const docUri = documentUri || "developer.zslp.org";
       const link = await createToken(wallet, {
         name: tokenName,
         symbol: tokenSymbol,
@@ -319,23 +319,10 @@ const Create = ({ history }) => {
                           address={wallet && wallet.Path145.cashAddress}
                         />
                       </Paragraph>
-                      <Paragraph>You currently have 0 BCH.</Paragraph>
+                      <Paragraph>You currently have 0 ZCL.</Paragraph>
                       <Paragraph>
-                        Deposit some BCH in order to pay for the transaction that will generate the
+                        Deposit some ZCL in order to pay for the transaction that will generate the
                         token.
-                      </Paragraph>
-                      <Paragraph>
-                        Get free BCH from the{" "}
-                        <strong>
-                          <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href="https://free.bitcoin.com/"
-                          >
-                            Bitcoin.com Faucet
-                          </a>
-                        </strong>
-                        !
                       </Paragraph>
                     </>
                   ) : null}
@@ -463,17 +450,7 @@ const Create = ({ history }) => {
                             message={
                               <>
                                 <Icon type="info-circle" /> The document hash is a sha256 hash of
-                                the whitepaper for your token. You can create a hash of any
-                                document, and learn more about its use, at
-                                <strong>
-                                  <a
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    href="https://notary.bitcoin.com"
-                                  >
-                                    {` notary.bitcoin.com`}
-                                  </a>
-                                </strong>
+                                the whitepaper for your token. You can create a hash of any document
                                 . Click on the input below to hash the file.
                               </>
                             }
@@ -548,7 +525,7 @@ const Create = ({ history }) => {
 
                         <Form.Item>
                           <Input
-                            placeholder="token website e.g.: developer.bitcoin.com"
+                            placeholder="token website e.g.: developer.zslp.org"
                             name="documentUri"
                             onChange={e => handleChange(e)}
                             required
@@ -567,7 +544,7 @@ const Create = ({ history }) => {
                         After creating your token, follow{" "}
                         <strong>
                           <a
-                            href="https://github.com/kosinusbch/slp-token-icons#adding-your-icon"
+                            href="https://github.com/ZSLP/zslp-token-icons#adding-your-icon"
                             target="_blank"
                             rel="noopener noreferrer"
                           >

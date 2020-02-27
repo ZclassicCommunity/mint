@@ -28,7 +28,6 @@ const SendBCH = ({ onClose, outerAction }) => {
   const [loading, setLoading] = useState(false);
   const [action, setAction] = useState("send");
   const [history, setHistory] = useState(null);
-  const [bchToDollar, setBchToDollar] = useState(null);
 
   useEffect(() => setAction("send"), [outerAction]);
 
@@ -113,13 +112,6 @@ const SendBCH = ({ onClose, outerAction }) => {
         details.map(detail => detail.transactions),
         tokens
       );
-      await fetch("https://markets.api.bitcoin.com/live/bitcoin")
-        .then(response => {
-          return response.json();
-        })
-        .then(myJson => {
-          setBchToDollar(myJson.data.BCH);
-        });
       setHistory(resp);
     } catch (err) {
       const message = err.message || err.error || JSON.stringify(err);
@@ -195,7 +187,7 @@ const SendBCH = ({ onClose, outerAction }) => {
                   <StyledButtonWrapper>
                     <>
                       <Paragraph>
-                        You currently have 0 BCH. Deposit some funds to use this feature.
+                        You currently have 0 ZCL. Deposit some funds to use this feature.
                       </Paragraph>
                       <Paragraph>
                         <QRCode id="borderedQRCode" address={wallet.Path145.cashAddress} />
@@ -218,7 +210,7 @@ const SendBCH = ({ onClose, outerAction }) => {
                         }
                         onScan={result => setFormData({ ...formData, address: result })}
                         inputProps={{
-                          placeholder: "BCH Address",
+                          placeholder: "ZCL Address",
                           name: "address",
                           onChange: e => handleChange(e),
                           required: true,
@@ -238,7 +230,7 @@ const SendBCH = ({ onClose, outerAction }) => {
                         inputProps={{
                           name: "value",
                           placeholder: "Amount",
-                          suffix: "BCH",
+                          suffix: "ZCL",
                           onChange: e => handleChange(e),
                           required: true,
                           value: formData.value
@@ -272,7 +264,7 @@ const SendBCH = ({ onClose, outerAction }) => {
                       }}
                     >
                       <a
-                        href={`https://explorer.bitcoin.com/bch/tx/${el.txid}`}
+                        href={`https://explorer.zcl.zeltrez.io/tx/${el.txid}`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -283,14 +275,7 @@ const SendBCH = ({ onClose, outerAction }) => {
                             {" "}
                             <p>{`${el.transactionBalance.balance > 0 ? "+" : ""}${
                               el.transactionBalance.balance
-                            } BCH`}</p>
-                            <p>{`${el.transactionBalance.balance > 0 ? "+$" : "-$"}${
-                              (Math.abs(el.transactionBalance.balance) / bchToDollar)
-                                .toFixed(2)
-                                .toString() === "0.00"
-                                ? 0.01
-                                : (Math.abs(el.transactionBalance.balance) / bchToDollar).toFixed(2)
-                            } USD`}</p>
+                            } ZCL`}</p>
                             {el.transactionBalance.type.includes("MintDividend") && (
                               <>
                                 <h4>Outputs:</h4>
@@ -311,7 +296,7 @@ const SendBCH = ({ onClose, outerAction }) => {
                                     </Paragraph>
                                     <p style={{ marginTop: "-20px" }}>{`amount: ${
                                       output.amount > 0 ? "+" : ""
-                                    }${output.amount} BCH`}</p>
+                                    }${output.amount} ZCL`}</p>
                                   </>
                                 ))}
 
@@ -347,7 +332,7 @@ const SendBCH = ({ onClose, outerAction }) => {
                     </div>
                   ))}
                   <a
-                    href={`https://explorer.bitcoin.com/bch/address/${wallet.Path145.cashAddress}`}
+                    href={`https://explorer.zcl.zeltrez.io/address/${wallet.Path145.cashAddress}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

@@ -3,7 +3,6 @@ import { WalletContext } from "../../utils/context";
 import { Input, Button, Icon, Row, Col, Card, Form, Collapse } from "antd";
 import Img from "react-image";
 import StyledOnboarding from "../Common/StyledOnBoarding";
-import bitcoinWalletLogo from "../../assets/bitcoin-com-wallet-icon.png";
 import badgerWalletLogo from "../../assets/badger-icon.png";
 import pixelSquareLogo from "../../assets/pixel-square-icon.png";
 
@@ -84,7 +83,7 @@ export const OnBoarding = ({ history }) => {
                         width="16"
                         height="16"
                       />{" "}
-                      mint.bitcoin.com wallet
+                      mint.zslp.org wallet
                     </>
                   }
                   key="1"
@@ -150,29 +149,6 @@ export const OnBoarding = ({ history }) => {
                     )
                   )}
                 </Collapse.Panel>
-
-                <Collapse.Panel
-                  header={
-                    <>
-                      <Img
-                        style={{ marginBottom: "3px" }}
-                        src={bitcoinWalletLogo}
-                        width="13"
-                        height="18"
-                      />{" "}
-                      Bitcoin.com wallet
-                    </>
-                  }
-                  style={{ textAlign: "left" }}
-                  key="3"
-                >
-                  <div style={{ textAlign: "center" }}>
-                    <h3 style={{ marginBottom: 0 }}>
-                      <Icon type="clock-circle" />
-                    </h3>
-                    <strong>Coming Soon</strong>
-                  </div>
-                </Collapse.Panel>
               </Collapse>
 
               <div style={{ paddingTop: "12px" }}>
@@ -197,22 +173,18 @@ export const OnBoarding = ({ history }) => {
           >
             <div style={{}}>
               <p>
-                Bitcoin.com Mint is an{" "}
-                <a
-                  href="https://github.com/Bitcoin-com/mint/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                ZSLP.org Mint is an{" "}
+                <a href="https://github.com/ZSLP/mint/" target="_blank" rel="noopener noreferrer">
                   open source,
                 </a>{" "}
-                non-custodial web wallet supporting SLP and BCH.{" "}
+                non-custodial web wallet supporting ZSLP and ZCL.{" "}
               </p>
               <p>
                 {" "}
                 Web wallets offer user convenience, but storing large amounts of money on a web
                 wallet is not recommended.
               </p>
-              <p>Creating your own SLP tokens only costs a few cents worth of BCH.</p>
+              <p>Creating your own ZSLP tokens only costs a few cents worth of ZCL.</p>
             </div>
           </Card>
         </Col>

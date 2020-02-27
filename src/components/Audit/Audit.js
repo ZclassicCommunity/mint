@@ -20,11 +20,7 @@ export default () => {
             <Title level={4}>Never trust, always verify.</Title>
             <Text>
               Check the open source code{" "}
-              <a
-                href="https://github.com/Bitcoin-com/mint"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
+              <a href="https://github.com/ZSLP/mint" rel="noopener noreferrer" target="_blank">
                 here
               </a>
               .
@@ -33,9 +29,9 @@ export default () => {
             <Text>Check and/or change the REST API in Configure. </Text>
             <br />
             <Text>
-              Install, build and run Bitcoin.com Mint{" "}
+              Install, build and run ZSLP.org Mint{" "}
               <a
-                href="https://github.com/Bitcoin-com/mint#running-locally"
+                href="https://github.com/ZSLP/mint#running-locally"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -46,7 +42,7 @@ export default () => {
             <br />
             <Text>
               Join our{" "}
-              <a href="https://t.me/piticocash" rel="noopener noreferrer" target="_blank">
+              <a href="https://t.me/Zclassic800cc" rel="noopener noreferrer" target="_blank">
                 public telegram group
               </a>
               .

@@ -71,7 +71,7 @@ const Mint = ({ token, onClose }) => {
       if (/don't have the minting baton/.test(e.message)) {
         message = e.message;
       } else if (/Invalid BCH address/.test(e.message)) {
-        message = "Invalid BCH address";
+        message = "Invalid ZCL address";
       } else if (!e.error) {
         message = `Transaction failed: no response from ${getRestUrl()}.`;
       } else if (/Could not communicate with full node or other external service/.test(e.error)) {
@@ -126,9 +126,9 @@ const Mint = ({ token, onClose }) => {
                       <Paragraph style={{ overflowWrap: "break-word" }} copyable>
                         {wallet.Path145.cashAddress}
                       </Paragraph>
-                      <Paragraph>You currently have 0 BCH.</Paragraph>
+                      <Paragraph>You currently have 0 ZCL.</Paragraph>
                       <Paragraph>
-                        Deposit some BCH in order to pay for the transaction that will mint the
+                        Deposit some ZCL in order to pay for the transaction that will mint the
                         token
                       </Paragraph>
                     </>
@@ -141,10 +141,12 @@ const Mint = ({ token, onClose }) => {
                 <Form style={{ width: "auto" }}>
                   <FormItemWithQRCodeAddon
                     validateStatus={!formData.dirty && !formData.baton ? "error" : ""}
-                    help={!formData.dirty && !formData.baton ? "Should be a valid slp address" : ""}
+                    help={
+                      !formData.dirty && !formData.baton ? "Should be a valid zslp address" : ""
+                    }
                     onScan={result => setFormData({ ...formData, address: result })}
                     inputProps={{
-                      placeholder: "Baton (slp address)",
+                      placeholder: "Baton (zslp address)",
                       name: "baton",
                       onChange: e => handleChange(e),
                       required: true,

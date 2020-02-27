@@ -167,12 +167,12 @@ export const AdvancedOptions = ({ advancedOptions, setAdvancedOptions, disabled 
                           validateStatus={addressToExclude.valid === false ? "error" : ""}
                           help={
                             addressToExclude.valid === false
-                              ? "Must be a valid BCH or SLP address"
+                              ? "Must be a valid ZCL or ZSLP address"
                               : ""
                           }
                           onScan={result => updateAddressesToExclude(result, index)}
                           inputProps={{
-                            placeholder: "BCH or SLP address",
+                            placeholder: "ZCL or ZSLP address",
                             onChange: e => updateAddressesToExclude(e.target.value, index),
                             required: true,
                             value: advancedOptions.addressesToExclude[index]

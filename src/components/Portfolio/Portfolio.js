@@ -65,7 +65,7 @@ export default () => {
   const { wallet, tokens, loading, balances } = ContextValue;
   const [selectedToken, setSelectedToken] = useState(null);
   const [action, setAction] = useState(null);
-  const SLP_TOKEN_ICONS_URL = "https://tokens.bch.sx/64";
+  const SLP_TOKEN_ICONS_URL = "https://tokens.zslp.org/64";
 
   const [loadingTokenHistory, setLoadingTokenHistory] = useState(false);
   const [tokenCardAction, setTokenCardAction] = useState("details");
@@ -221,7 +221,7 @@ export default () => {
                   }}
                 >
                   <div style={{ fontSize: "16px", fontWeight: "bold", color: "rgb(62, 63, 66)" }}>
-                    BCH
+                    ZCL
                   </div>
                   <div
                     style={{
@@ -231,7 +231,7 @@ export default () => {
                       whiteSpace: "nowrap"
                     }}
                   >
-                    Bitcoin Cash
+                    ZClassic
                   </div>
                 </div>
               }
@@ -392,7 +392,7 @@ export default () => {
                               }}
                             >
                               <a
-                                href={`https://explorer.bitcoin.com/bch/tx/${el.txid}`}
+                                href={`https://explorer.zslp.org/#tx/${el.txid}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >
@@ -423,7 +423,7 @@ export default () => {
                             </div>
                           ))}
                           <a
-                            href={`https://explorer.bitcoin.com/bch/address/${wallet.Path245.slpAddress}`}
+                            href={`https://explorer.zslp.org/#address/${wallet.Path245.slpAddress}`}
                             target="_blank"
                             rel="noopener noreferrer"
                           >

@@ -60,7 +60,7 @@ aside::-webkit-scrollbar-thumb {
 }
 
 .App-link {
-  color: #09d3ac;
+  color: #ed9e55;
 }
 .ant-menu-item-group-title {
   color: rgba(255, 255, 255, 0.45) !important;
@@ -193,7 +193,7 @@ input.ant-input {
 }
 
 .ant-menu-item.ant-menu-item-selected > span {
-  color: #5daa7e;
+  color: #d68433;
 }
 
 .ant-menu-item.ant-menu-item-selected {

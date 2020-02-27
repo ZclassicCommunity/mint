@@ -168,7 +168,7 @@ const PayDividends = (SLP, { token, onClose, bordered = false }) => {
       if (/don't have the minting baton/.test(e.message)) {
         message = e.message;
       } else if (/Invalid BCH address/.test(e.message)) {
-        message = "Invalid BCH address";
+        message = "Invalid ZCL address";
       } else if (/64: dust/.test(e.message)) {
         message = "Small amount";
       } else if (/Balance 0/.test(e.message)) {
@@ -271,7 +271,7 @@ const PayDividends = (SLP, { token, onClose, bordered = false }) => {
                     <StyledButtonWrapper>
                       <>
                         <Paragraph>
-                          You currently have 0 BCH. Deposit some funds to use this feature.
+                          You currently have 0 ZCL. Deposit some funds to use this feature.
                         </Paragraph>
                         <Paragraph>
                           <QRCode id="borderedQRCode" address={wallet.Path145.cashAddress} />
@@ -343,7 +343,7 @@ const PayDividends = (SLP, { token, onClose, bordered = false }) => {
                     &nbsp; &nbsp; &nbsp;
                     <Col>
                       <Tooltip
-                        title={`To be eligible, addresses must have an SLP balance such that their proportional share of your dividend payment is greater than ${DUST} BCH`}
+                        title={`To be eligible, addresses must have an ZSLP balance such that their proportional share of your dividend payment is greater than ${DUST} ZCL`}
                       >
                         <StyledStat>
                           <Icon type="usergroup-add" />
@@ -366,7 +366,7 @@ const PayDividends = (SLP, { token, onClose, bordered = false }) => {
                             <Form.Item
                               validateStatus={
                                 formData.dirty &&
-                                (!tokenInfo && lastSearchedTokenId) &&
+                                !tokenInfo && lastSearchedTokenId &&
                                 (!/^[A-Fa-f0-9]{64}$/g.test(formData.tokenId) ||
                                   (tokenNotFound &&
                                     lastSearchedTokenId === formData.tokenId &&
@@ -377,7 +377,7 @@ const PayDividends = (SLP, { token, onClose, bordered = false }) => {
                               }
                               help={
                                 formData.dirty &&
-                                (!tokenInfo && lastSearchedTokenId) &&
+                                !tokenInfo && lastSearchedTokenId &&
                                 (!/^[A-Fa-f0-9]{64}$/g.test(formData.tokenId) ||
                                   (tokenNotFound &&
                                     lastSearchedTokenId === formData.tokenId &&
@@ -461,7 +461,7 @@ const PayDividends = (SLP, { token, onClose, bordered = false }) => {
                             /^[A-Fa-f0-9]{64}$/g.test(formData.tokenId) &&
                             tokenInfo &&
                             !loading
-                              ? `Must be greater than ${DUST} BCH ${
+                              ? `Must be greater than ${DUST} ZCL ${
                                   stats.maxAmount > 0
                                     ? `and lower or equal to ${stats.maxAmount}`
                                     : ""
@@ -470,7 +470,7 @@ const PayDividends = (SLP, { token, onClose, bordered = false }) => {
                           }
                           onMax={onMaxAmount}
                           inputProps={{
-                            suffix: "BCH",
+                            suffix: "ZCL",
                             name: "amount",
                             placeholder: "Amount",
                             onChange: e => handleChange(e),

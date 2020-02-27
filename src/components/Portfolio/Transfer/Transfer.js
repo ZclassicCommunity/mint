@@ -104,11 +104,11 @@ const Transfer = ({ token, onClose }) => {
                   <FormItemWithQRCodeAddon
                     validateStatus={formData.dirty && !formData.address ? "error" : ""}
                     help={
-                      formData.dirty && !formData.address ? "Should be a valid slp address" : ""
+                      formData.dirty && !formData.address ? "Should be a valid zslp address" : ""
                     }
                     onScan={result => setFormData({ ...formData, address: result })}
                     inputProps={{
-                      placeholder: "SLP Address",
+                      placeholder: "ZSLP Address",
                       name: "address",
                       onChange: e => handleChange(e),
                       required: true,
