@@ -1,4 +1,4 @@
-# Mint, an ZSLP Management Suite
+# Mint, a ZSLP Management Suite
 
 ## Create and control your ZSLP Tokens in your browser
 
